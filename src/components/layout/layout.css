@@ -6,6 +6,9 @@
 .layout_content{
     background-color: var(--second-bg);
     flex: 1;
-    min-height: 100vh;
+    
+}
+
+.layout_content-main{
     padding: 10px;
 }

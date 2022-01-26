@@ -1,9 +1,9 @@
 .sidebar{
+    display: flex;
     min-width: var(--sidebar-width);
+    flex-direction: column;
     height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
+    position: sticky;
     background-color: var(--main-bg);
     box-shadow: var(--box-shadow);
     overflow-y: auto;
