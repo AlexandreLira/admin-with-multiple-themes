@@ -11,7 +11,7 @@
 
   --sidebar-width: 300px;
   --border-radius: 15px;
-  --topnav-height: 110px;
+  --topnav-height: 100px;
   --transition-cubic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -59,8 +59,43 @@ input{
   outline: none
 }
 
-input:hover{
+input:focus{
   border: 2px solid var(--main-color);
+}
+
+.page-header {
+  margin-bottom: 40px;
+  text-transform: capitalize;
+}
+
+.card {
+  padding: 30px;
+  margin-bottom: 30px;
+  background-color: var(--main-bg);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius)
+}
+
+.full-height {
+  height: 100%;
+}
+
+.card.full-height {
+  height: calc(100% - 30px);
+}
+
+
+.card_header {
+  text-transform: capitalize;
+} 
+
+.card_header ~ .card_body {
+  margin-top: 30px;
+}
+
+.card_footer {
+  text-align: center;
+  text-transform: capitalize;
 }
 
 ::-webkit-scrollbar {
