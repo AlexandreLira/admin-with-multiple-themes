@@ -24,7 +24,7 @@ const Sidebar = () => {
     const activeItem = sidebar_items.findIndex(item => item.route === location.pathname)
 
     return(
-        <div className="sidebar">
+        <aside className="sidebar">
             <div className="sidebar_logo_container">
                 <img src={logo} alt="company logo" className="sidebar_logo" />
             </div>
@@ -35,7 +35,7 @@ const Sidebar = () => {
                     </Link>
                 ))}
             </div>
-        </div>
+        </aside>
     );
 }
 export default Sidebar;
