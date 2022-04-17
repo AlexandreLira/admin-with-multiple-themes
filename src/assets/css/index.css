@@ -123,6 +123,44 @@ input:focus{
   text-transform: capitalize;
 }
 
+/* themes */
+
+.light-background {
+  background-color: var(--main-bg-light);
+  color: #000;
+}
+
+.dark-background {
+  background-color: var(--main-bg-dark);
+  color: #FFF;
+}
+
+.blue-color {
+  background-color: var(--main-color-blue);
+  color: #FFF;
+}
+
+.red-color {
+  background-color: var(--main-color-red);
+  color: #FFF;
+}
+
+.cyan-color {
+  background-color: var(--main-color-cyan);
+  color: #FFF;
+}
+
+.green-color {
+  background-color: var(--main-color-green);
+  color: #FFF;
+}
+
+.orange-color {
+  background-color: var(--main-color-orange);
+  color: #FFF;
+}
+
+/* scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }

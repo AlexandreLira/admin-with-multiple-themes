@@ -1,6 +1,7 @@
 .layout{
     display: flex;
     flex-direction: row;
+    color: var(--txt-color)
 }
 
 .layout_content{

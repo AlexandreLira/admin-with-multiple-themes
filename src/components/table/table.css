@@ -57,6 +57,6 @@ tbody > tr:hover {
 }
 
 .table_pagination-item:hover {
-    background-color: var(--second-color);
     color: var(--txt-white);
+    background-color: var(--second-color);
 }

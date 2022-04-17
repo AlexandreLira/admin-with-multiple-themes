@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { getAllPokemons, searchPokemon } from '../../services/api';
+
 import DropDown from '../dropdown/DropDown';
-import { Link } from 'react-router-dom';
+import ThemeMenu from '../themeMenu/ThemeMenu';
+
 import notifications from '../../assets/JsonData/notification.json'
 import user_menu from '../../assets/JsonData/user_menus.json'
-import user_image from '../../assets/images/tuat.png'
+import user_image from '../../assets/images/ash_ketchum.jpg'
 import './topnav.css';
 
+
 const curr_user = {
-    display_name: 'Tuat Tran',
+    display_name: 'Ash Ketchum',
     image: user_image,
 }
 
@@ -39,15 +44,51 @@ const renderUserMenu = (item, index) => (
 )
 
 const TopNav = () => {
+    const [search, setSearch] = useState('')
+    const [pokemons, setPokemons] = useState([])
+    const navigate = useNavigate()
+
+    const onChangeHandler = (event) => {
+        setSearch(event.target.value)
+    }
+
+    const onSearchHandler = async () => {
+        const result = await searchPokemon(search)
+        navigate('pokemon')
+        
+    }
+
+    useEffect(() => {
+        const loadPokemons = async () => {
+            const result = await getAllPokemons(10000, 0)
+            setPokemons(result.results)
+        }
+        loadPokemons()
+    }, [])
+
     return(
         <div className="topnav">
             <div className="topnav_search">
                 <input 
                     type="text" 
                     className="topnav_search-input"
+                    list="pokemonsList"
                     placeholder="Search here..."
+                    value={search}
+                    onChange={event => onChangeHandler(event)}
                 />
-                <i className="bx bx-search topnav_search-icon"></i>
+                <datalist id="pokemonsList">
+                    {pokemons.map((item, index) => {
+                        const name = item.name.replaceAll('-', ' ')
+                        return (
+                            <option key={index} value={name} />
+                        )
+                    }
+                    )}
+                </datalist>
+                <button onClick={onSearchHandler}>
+                    <i className="bx bx-search topnav_search-icon"></i>
+                </button>
             </div>
             <div className="topnav_right">
 
@@ -70,7 +111,7 @@ const TopNav = () => {
                 </div>
 
                 <div className="topnav_right-item">
-                    <DropDown/>
+                    <ThemeMenu/>
                 </div>
             </div>
         </div>

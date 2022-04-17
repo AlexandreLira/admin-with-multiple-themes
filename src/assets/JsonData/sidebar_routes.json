@@ -10,9 +10,9 @@
         "icon": "bx bx-user-pin"
     },
     {
-        "display_name": "Products",
-        "route": "/products",
-        "icon": "bx bx-package"
+        "display_name": "Pokémons",
+        "route": "/pokemons",
+        "icon": "bx bx-store"
     },
     {
         "display_name": "Orders",
